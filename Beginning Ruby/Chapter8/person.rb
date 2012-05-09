@@ -4,6 +4,7 @@ class Person
 
   # Create the person object and store their name
   def initialize(name)
+    raise BadDataException, "No name present" if name.empty?
     @name = name
   end
 
@@ -12,3 +13,5 @@ class Person
     puts "Person called #{@name}"
   end
 end
+
+fred = Person.new('')
